@@ -28,12 +28,11 @@ def getLayer(Gcode, layer):
 def drawLayer(Layer, parsedGcode, scale):
     turtle.pendown()
     for i in range(getLayer(parsedGcode, Layer) , getLayer(parsedGcode, Layer + 1)):
-            #if parsedGcode[i].command == ('G', 0):
-            #    turtle.color("red")
-            #if parsedGcode[i].command == ('G', 1):
-            #    turtle.color("black")
+            if parsedGcode[i].command == ('G', 0):
+                turtle.color("red")
             if parsedGcode[i].command[0] == "G" and "X" in parsedGcode[i].params and "Y" in parsedGcode[i].params:
                 turtle.setpos(parsedGcode[i].get_param("X", return_type=float) * scale, parsedGcode[i].get_param("Y", return_type=float) * scale)
+            turtle.color("black")
         
 
 
