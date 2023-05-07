@@ -3,6 +3,7 @@ import turtle
 
 turtle.setworldcoordinates(0, 0, 700, 700)
 turtle.speed(100000000)
+turtle.hideturtle()
 
 gcodeFile = input("what is the name of the gcode file?")
 
